@@ -9,7 +9,7 @@ movie();
 const server = http.createServer((req, res) => {
     //console.log(req.url); // sever console에 찍힘 
     //res.write('hello');
-    res.writeHead(200,{"Content-Type":"application/json"});
+    res.writeHead(200,{"Content-Type":"application/json"}); //200번 생략가능 ! default가 'ok:200'
    (async () => {
     let movieNm = await movie();
     console.log(movieNm);
