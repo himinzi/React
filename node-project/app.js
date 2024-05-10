@@ -3,6 +3,7 @@ const pool = require("./mysql");
 const app = express();
 const port = 3000;
 
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -80,7 +81,7 @@ app.post("/customer", (req, res) => {
     const email = req.body.email;
     const phone = req.body.phone;
     const address = req.body.address;
-    sql = `insert into set name = ${username}, id=${id}, email=${email}, phone=${phone}, address=${address} `
+    sql = `insert into customer set name = ${username}, id=${id}, email=${email}, phone=${phone}, address=${address} `
     pool.query(sql, function (err, results, fields) {
         if (err) {
             console.log(err);

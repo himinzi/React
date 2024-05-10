@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>바닐라 자바스크립트</h3>
+    <input type="text" id="txt">
+    <button id="btn" type="button">추가</button>
+    <ul id="ul">
+        <li>바나나</li>
+        <li>사과</li>
+    </ul>
+    <script>
+        let txt = document.getElementById("txt");
+        let btn = document.getElementById("btn");
+        let ul = document.getElementById("ul");
+
+        //텍스트필드 엔터키 입력하면 추가되도록
+        txt.addEventListener("keydown", function(){
+            if(event.keyCode == 10) {
+                btn.click();
+            }
+        })
+
+        //버튼 클릭 이벤트
+        btn.addEventListener("click", function(){
+            let li = document.createElement("li");
+            li.innerHTML = txt.value;
+            ul.appendChild(li);
+            txt.value = "";
+        })
+
+        //li 태크 클릭 이벤트 -> 배경색을 변경
+        ul.addEventListener("click", function(){            
+            if(event.target.nodeName == "LI" ) {
+                console.log( event )
+                console.log( event.target )  //$(event.target) == $(this) <> this
+                console.log( this )
+                event.target.style.backgroundColor="yellowgreen";
+            }
+        })
+    </script>
+</body>
+</html>

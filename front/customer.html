@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> CUSTOMER MANAGE</h1>
+    <!-- <div id="list">
+        <div>
+            <span>1</span><span>길동</span>
+        </div>
+    </div> -->
+    <table id = "tbl"></table>
+    <script>
+        fetch("http://localhost:3000/customer")
+            .then(result => result.json())
+            .then(result => {
+                console.log(result)
+                // let temp;
+                // let id;
+                // let name;
+                // result.forEach(ele => {
+                //     temp = document.querySelector('#list div').cloneNode(true);
+                //     id = ele.id;
+                //     name = ele.name;
+                //     temp.firstChild.innerText = id;
+                //     temp.lastChild.innerText = name;
+                //     document.querySelector('#list').appendChild(temp);
+                // });
+                for(cust of result){
+                    let row = tbl.insertRow();
+                    for(field in cust){
+                        let td1 = row.insertCell();
+                        td1.innerText = cust[field];
+                    }
+                }
+            }
+            // for(cust of result){
+            //    let insertEle = `<div><span>${cust.id}</span><span>${cust.name}</span></div>`    
+            //    list.innerHTML+= insertEle;
+            //    list.insertAdjacentHTML("beforeend", insertEle);
+            // }
+            ) 
+    </script>
+</body>
+<!-- open with live server -->
