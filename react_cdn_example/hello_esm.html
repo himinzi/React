@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+{
+"imports": {
+"react": "https://esm.sh/react?dev",
+"react-dom/client": "https://esm.sh/react-dom/client?dev"
+}
+}
+</script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+        import React from 'react';
+        import { createRoot } from 'react-dom/client';
+
+        function Navigation() {
+            return <ul>
+                <li>ㅎㅇㅎㅇ</li>
+                <li>ㅇㅎㅇㅎ</li>
+            </ul>
+        }
+        function Hello() {
+            return (
+                <div>
+                    <h1>hello world!</h1>
+                    <Navigation />
+                </div> // 무조건 root(최상위) node가 필요!
+            );
+        }  // tag를 함수로 만들어서, 함수 이름을 tag 처럼 불러쓸 수 있음. 
+        const domContext = document.querySelector("#root");
+        const root = createRoot(domContext);
+        root.render(Hello());
+
+    </script>
+</body>
+
+</html>

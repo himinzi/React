@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel"> // 이렇게 써줘야 밑에처럼 쓸 수 있음. 
+        function Navigation() {
+            return <ul>
+                <li>ㅎㅇㅎㅇ</li>
+                <li>ㅇㅎㅇㅎ</li>
+            </ul>
+        }
+        function Hello() {
+            return (
+                <div>
+                    <h1>hello world!</h1> 
+                    <Navigation/>
+                </div> // 무조건 root(최상위) node가 필요!
+            );
+        }  // tag를 함수로 만들어서, 함수 이름을 tag 처럼 불러쓸 수 있음. 
+
+        const domContext = document.querySelector("#root");
+        const root = ReactDOM.createRoot(domContext);
+        root.render(Hello());
+
+    </script>
+</body>
+
+</html>
