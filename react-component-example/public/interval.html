@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <button type="button" onClick="window.clearInterval(timer)">STOP</button>
+    <button type="button" onClick="timerStart()">GO</button>
+    <script> // window 생략가능
+        let timer;
+        // window.setTimeout(() => { // 지연시켜서 실행하고 싶을 때
+        //     result.innerHTML = new Date(); // id 값은 바로 가져올 수 있음
+        // }, 3000) // 실행할 function, time
+        let timerStart = () => {
+            timer = window.setInterval(() => { // interval
+                result.innerHTML = new Date();
+            }, 1000) } 
+    </script>
+</body>
+
+</html>
