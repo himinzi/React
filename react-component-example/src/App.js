@@ -40,14 +40,14 @@ function App() {
       <div className='col-8'>
         <Routes>
           <Route path='/comp01' element={<Comp01/>}/>
-          <Route path='/comp01' element={<Comp02/>}/>
-          <Route path='/comp01' element={<Comp03/>}/>
-          <Route path='/comp01' element={<Comp04/>}/>
-          <Route path='/comp01' element={<Comp05/>}/>
-          <Route path='/comp01' element={<Comp06/>}/>
-          <Route path='/comp01' element={<Comp07/>}/>
-          <Route path='/comp01' element={<Comp08/>}/>
-          <Route path='/comp01' element={<Comp09/>}/>
+          <Route path='/comp02' element={<Comp02/>}/>
+          <Route path='/comp03' element={<Comp03/>}/>
+          <Route path='/comp04' element={<Comp04/>}/>
+          <Route path='/comp05' element={<Comp05/>}/>
+          <Route path='/comp06' element={<Comp06/>}/>
+          <Route path='/comp07' element={<Comp07/>}/>
+          <Route path='/comp08' element={<Comp08/>}/>
+          <Route path='/comp09' element={<Comp09/>}/>
         </Routes>
       </div>
       {/* <Comp/> */}

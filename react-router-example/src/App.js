@@ -122,7 +122,6 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/topics/*' element={<Topics />} />
                 <Route path='/contact' element={<Contact />} />
-                
               </Routes>
             </CardBody>
           </Card>
