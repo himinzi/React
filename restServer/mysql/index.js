@@ -7,7 +7,7 @@ const conn = {
   port: "3306",
   user: "hr",
   password: "hr",
-  database: "test",
+  database: "restaurant",
   connectionLimit: 10,
 };
 
